@@ -1,6 +1,7 @@
 import { Search, Sparkles } from "lucide-react";
 import { memo, useEffect, useMemo, useState, useTransition } from "react";
 import { personaMatchesSearch } from "./aliases";
+import { assetUrl } from "./config/base-path";
 import { buildFusionIndex, getFusionEmptyMessage, isPersona } from "./fusion";
 import type { FusionCombo, FusionData, Persona, PersonaData } from "./types";
 
@@ -64,10 +65,10 @@ const PersonaImage = memo(function PersonaImage({
   }, [persona.id, persona.image]);
 
   const src = failed
-    ? "/assets/personas/_placeholder.svg"
+    ? assetUrl("assets/personas/_placeholder.svg")
     : persona.image.startsWith("http")
       ? persona.image
-      : `/${persona.image}`;
+      : assetUrl(persona.image);
 
   return (
     <img
@@ -103,6 +104,12 @@ const PersonaDetail = memo(function PersonaDetail({ persona }: { persona: Person
               </span>
             ))}
           </div>
+        </div>
+        <div className="persona-story-block">
+          <h3 className="persona-story-label">背景故事</h3>
+          <p className={`persona-story${persona.story?.trim() ? "" : " is-empty"}`}>
+            {persona.story?.trim() || "暂无背景故事"}
+          </p>
         </div>
       </div>
 
@@ -249,11 +256,11 @@ export function App() {
 
   useEffect(() => {
     Promise.all([
-      fetch("/data/personas.json").then(async (response) => {
+      fetch(assetUrl("data/personas.json")).then(async (response) => {
         if (!response.ok) throw new Error(`personas.json 加载失败 (${response.status})`);
         return response.json() as Promise<PersonaData>;
       }),
-      fetch("/data/fusion.json").then(async (response) => {
+      fetch(assetUrl("data/fusion.json")).then(async (response) => {
         if (!response.ok) throw new Error(`fusion.json 加载失败 (${response.status})`);
         return response.json() as Promise<FusionData>;
       }),

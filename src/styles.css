@@ -434,8 +434,8 @@ select:focus {
   position: relative;
   display: grid;
   grid-template-columns: minmax(150px, 200px) 1fr;
-  gap: 28px;
-  align-items: center;
+  gap: 20px 28px;
+  align-items: start;
   min-height: 240px;
   padding: 28px;
   overflow: hidden;
@@ -452,6 +452,36 @@ select:focus {
 .persona-image-wrap {
   position: relative;
   z-index: 1;
+}
+
+.persona-story-block {
+  grid-column: 1 / -1;
+  position: relative;
+  z-index: 1;
+  padding-top: 4px;
+  border-top: 1px solid var(--line);
+}
+
+.persona-story-label {
+  margin-bottom: 10px;
+  color: var(--accent-bright);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.persona-story {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 14px;
+  line-height: 1.85;
+  text-align: justify;
+  text-wrap: pretty;
+}
+
+.persona-story.is-empty {
+  color: var(--muted);
+  font-style: italic;
 }
 
 .persona-image-wrap::after {

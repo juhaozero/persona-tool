@@ -8,6 +8,7 @@ export interface Persona {
   resistances: string;
   inheritanceType: string;
   image: string;
+  story?: string;
 }
 
 export interface Source {
