@@ -1,0 +1,28 @@
+{
+  "name": "p4g-persona-fusion-tool",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1",
+    "build": "tsc -b && vite build && node tools/copy-public.cjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "data:build": "node tools/build-data.cjs",
+    "fusion:fetch": "node tools/fetch-fusion-18183.cjs",
+    "images:fetch": "node tools/fetch-images.cjs",
+    "images:register": "node tools/register-local-images.cjs",
+    "data:all": "node tools/build-data.cjs && node tools/fetch-fusion-18183.cjs && node tools/fetch-images.cjs"
+  },
+  "dependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "lucide-react": "^0.468.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "typescript": "^5.8.0",
+    "vite": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.17",
+    "@types/react-dom": "^19.2.3"
+  }
+}
