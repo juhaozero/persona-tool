@@ -347,10 +347,6 @@ export function App() {
             <p>Persona 4 Golden · 图鉴与合体配方</p>
           </div>
         </div>
-        <div className="header-decoration" aria-hidden="true">
-          <div className="deco-line"></div>
-          <div className="deco-diamond"></div>
-        </div>
       </header>
 
       <main className="layout">
@@ -388,11 +384,11 @@ export function App() {
               onChange={(event) => setArcana(event.target.value)}
               value={arcana}
             >
-            {arcanas.map((item) => (
-              <option key={item} value={item}>
-                {item}
-              </option>
-            ))}
+              {arcanas.map((item) => (
+                <option key={item} value={item}>
+                  {item}
+                </option>
+              ))}
             </select>
           </div>
           <PersonaList

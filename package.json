@@ -13,6 +13,7 @@
     "images:register": "node tools/register-local-images.cjs",
     "stories:fetch": "node tools/fetch-stories.cjs",
     "stories:apply": "node tools/apply-stories.cjs",
+    "data:restore": "node tools/build-data.cjs && node tools/apply-stories.cjs && node tools/fetch-fusion-18183.cjs && node tools/fetch-images.cjs",
     "data:all": "node tools/build-data.cjs && node tools/fetch-fusion-18183.cjs && node tools/fetch-images.cjs && node tools/fetch-stories.cjs"
   },
   "dependencies": {
