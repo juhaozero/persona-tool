@@ -1,29 +1,29 @@
 :root {
   color-scheme: dark;
-  --bg-deep: #06080f;
-  --bg: #0c1019;
-  --bg-soft: #141a28;
-  --bg-elevated: #1a2234;
-  --ink: #f4efe3;
-  --ink-soft: #d8d2c4;
-  --muted: #8b95ab;
-  --line: rgba(255, 214, 120, 0.14);
-  --line-strong: rgba(255, 214, 120, 0.28);
-  --panel: rgba(18, 24, 38, 0.82);
-  --panel-strong: rgba(26, 34, 52, 0.94);
-  --accent: #f0c14b;
-  --accent-bright: #ffe08a;
-  --accent-dark: #b8891a;
-  --accent-soft: rgba(240, 193, 75, 0.12);
-  --accent-glow: rgba(240, 193, 75, 0.22);
-  --blue: #8ec5ff;
-  --green: #7fd4a8;
-  --danger: #ff8f8f;
-  --shadow: 0 24px 60px rgba(0, 0, 0, 0.42);
-  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.28);
-  --radius-lg: 22px;
-  --radius-md: 16px;
-  --radius-sm: 12px;
+  --bg-deep: #0a0a0a;
+  --bg: #111111;
+  --bg-soft: #1a1a1a;
+  --bg-elevated: #222222;
+  --ink: #ffffff;
+  --ink-soft: #e0e0e0;
+  --muted: #888888;
+  --line: rgba(255, 255, 255, 0.12);
+  --line-strong: rgba(255, 255, 255, 0.24);
+  --panel: rgba(20, 20, 20, 0.92);
+  --panel-strong: rgba(30, 30, 30, 0.96);
+  --accent: #d71920;
+  --accent-bright: #ff3333;
+  --accent-dark: #8b0000;
+  --accent-soft: rgba(215, 25, 32, 0.15);
+  --accent-glow: rgba(215, 25, 32, 0.35);
+  --blue: #4a9eff;
+  --green: #5aff7a;
+  --danger: #ff6b6b;
+  --shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
+  --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.4);
+  --radius-lg: 4px;
+  --radius-md: 2px;
+  --radius-sm: 2px;
 }
 
 * {
@@ -46,10 +46,10 @@ body {
 .app-shell {
   min-height: 100vh;
   background:
-    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(240, 193, 75, 0.14), transparent 55%),
-    radial-gradient(ellipse 60% 40% at 95% 0%, rgba(126, 184, 255, 0.1), transparent 50%),
-    radial-gradient(ellipse 50% 30% at 50% 100%, rgba(240, 193, 75, 0.06), transparent 60%),
-    linear-gradient(180deg, #070a12 0%, #0e1320 45%, #0a0e18 100%);
+    radial-gradient(ellipse 80% 50% at 10% -10%, rgba(215, 25, 32, 0.18), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 95% 0%, rgba(74, 158, 255, 0.12), transparent 50%),
+    radial-gradient(ellipse 50% 30% at 50% 100%, rgba(215, 25, 32, 0.08), transparent 60%),
+    linear-gradient(180deg, #0a0a0a 0%, #111111 45%, #0a0a0a 100%);
 }
 
 .app-shell::before {
@@ -57,12 +57,12 @@ body {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  opacity: 0.35;
+  opacity: 0.15;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.02) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
-  background-size: 48px 48px;
-  mask-image: radial-gradient(ellipse at center, black 30%, transparent 85%);
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 12px),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 1px, transparent 1px, transparent 12px);
+  background-size: 24px 24px;
+  mask-image: radial-gradient(ellipse at center, black 20%, transparent 80%);
 }
 
 .app-header {
@@ -75,7 +75,7 @@ body {
   gap: 20px;
   padding: 18px 28px;
   border-bottom: 1px solid var(--line);
-  background: rgba(8, 11, 18, 0.78);
+  background: rgba(10, 10, 10, 0.92);
   backdrop-filter: blur(18px) saturate(1.2);
 }
 
@@ -90,26 +90,29 @@ body {
   place-items: center;
   width: 46px;
   height: 46px;
-  border-radius: 14px;
-  background: linear-gradient(145deg, rgba(240, 193, 75, 0.22), rgba(240, 193, 75, 0.06));
+  border-radius: 4px;
+  background: linear-gradient(145deg, rgba(215, 25, 32, 0.35), rgba(215, 25, 32, 0.1));
   border: 1px solid var(--line-strong);
   box-shadow: 0 0 24px var(--accent-glow);
   color: var(--accent-bright);
   font-size: 22px;
   font-weight: 900;
   line-height: 1;
+  transform: rotate(45deg);
 }
 
 .brand-copy h1 {
   font-size: 24px;
   font-weight: 800;
   letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .brand-copy p {
   margin-top: 4px;
   color: var(--muted);
   font-size: 13px;
+  letter-spacing: 0.02em;
 }
 
 h1,
@@ -124,13 +127,14 @@ p {
 .meta-line {
   color: var(--muted);
   font-size: 12px;
+  letter-spacing: 0.05em;
 }
 
 .eyebrow {
   margin-bottom: 6px;
-  color: var(--accent);
+  color: var(--accent-bright);
   font-weight: 800;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 
@@ -160,6 +164,22 @@ p {
   box-shadow: var(--shadow-soft);
   border-radius: var(--radius-lg);
   backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar::before,
+.fusion-panel::before,
+.panel::before,
+.persona-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.5;
 }
 
 .sidebar,
@@ -274,12 +294,12 @@ select {
 input:focus,
 select:focus {
   border-color: var(--line-strong);
-  box-shadow: 0 0 0 3px var(--accent-soft);
+  box-shadow: 0 0 0 2px var(--accent-soft);
 }
 
 .search-input:focus-within {
   border-color: var(--line-strong);
-  box-shadow: 0 0 0 3px var(--accent-soft);
+  box-shadow: 0 0 0 2px var(--accent-soft);
 }
 
 .persona-list {
@@ -314,13 +334,13 @@ select:focus {
 .persona-item:hover {
   border-color: var(--line);
   background: rgba(255, 255, 255, 0.03);
-  transform: translateY(-1px);
+  transform: translateX(2px);
 }
 
 .persona-item.active {
   border-color: var(--line-strong);
-  background: linear-gradient(135deg, rgba(240, 193, 75, 0.14), rgba(240, 193, 75, 0.04));
-  box-shadow: inset 0 0 0 1px rgba(240, 193, 75, 0.08), 0 8px 24px rgba(0, 0, 0, 0.18);
+  background: linear-gradient(90deg, rgba(215, 25, 32, 0.18), rgba(215, 25, 32, 0.06));
+  box-shadow: inset 0 0 0 1px rgba(215, 25, 32, 0.12), 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
 .persona-item.active .persona-item-thumb {
@@ -335,8 +355,8 @@ select:focus {
   min-width: 44px;
   height: 28px;
   padding: 0 10px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(240, 193, 75, 0.28), rgba(240, 193, 75, 0.12));
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, rgba(215, 25, 32, 0.35), rgba(215, 25, 32, 0.15));
   border: 1px solid var(--line-strong);
   color: var(--accent-bright);
   font-weight: 800;
@@ -346,7 +366,7 @@ select:focus {
 .persona-item-thumb {
   width: 48px;
   height: 48px;
-  border-radius: 12px;
+  border-radius: var(--radius-sm);
   object-fit: cover;
   border: 1px solid var(--line);
   background: var(--bg-elevated);
@@ -382,9 +402,9 @@ select:focus {
   min-width: 44px;
   height: 22px;
   padding: 0 8px;
-  border-radius: 999px;
-  background: linear-gradient(180deg, rgba(240, 193, 75, 0.24), rgba(240, 193, 75, 0.1));
-  border: 1px solid rgba(240, 193, 75, 0.28);
+  border-radius: var(--radius-sm);
+  background: linear-gradient(180deg, rgba(215, 25, 32, 0.3), rgba(215, 25, 32, 0.1));
+  border: 1px solid rgba(215, 25, 32, 0.35);
   color: var(--accent-bright);
   font-size: 11px;
   font-weight: 800;
@@ -416,13 +436,14 @@ select:focus {
   display: inline-flex;
   width: fit-content;
   padding: 3px 9px;
-  border-radius: 999px;
-  background: rgba(142, 197, 255, 0.1);
-  border: 1px solid rgba(142, 197, 255, 0.18);
+  border-radius: var(--radius-sm);
+  background: rgba(74, 158, 255, 0.12);
+  border: 1px solid rgba(74, 158, 255, 0.22);
   color: var(--blue);
   font-size: 11px;
   font-weight: 700;
   line-height: 1.2;
+  letter-spacing: 0.03em;
 }
 
 .detail {
@@ -447,6 +468,21 @@ select:focus {
   inset: 0;
   background: radial-gradient(circle at 18% 50%, var(--accent-glow), transparent 42%);
   pointer-events: none;
+}
+
+.persona-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 8px),
+    repeating-linear-gradient(-45deg, rgba(255, 255, 255, 0.02) 0px, rgba(255, 255, 255, 0.02) 1px, transparent 1px, transparent 8px);
+  background-size: 16px 16px;
+  pointer-events: none;
+  opacity: 0.3;
 }
 
 .persona-image-wrap {
@@ -488,7 +524,7 @@ select:focus {
   content: "";
   position: absolute;
   inset: -8px;
-  border-radius: 24px;
+  border-radius: var(--radius-lg);
   background: radial-gradient(circle, var(--accent-glow), transparent 70%);
   filter: blur(12px);
   z-index: -1;
@@ -499,9 +535,10 @@ select:focus {
   aspect-ratio: 1;
   object-fit: cover;
   border: 2px solid var(--line-strong);
-  border-radius: 20px;
+  border-radius: var(--radius-lg);
   background: var(--bg-elevated);
   box-shadow: var(--shadow);
+  image-rendering: auto;
 }
 
 .persona-title {
@@ -531,7 +568,7 @@ select:focus {
 .chip-list li {
   list-style: none;
   border: 1px solid var(--line);
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   padding: 7px 13px;
   background: rgba(255, 255, 255, 0.04);
   color: var(--ink-soft);
@@ -539,7 +576,7 @@ select:focus {
 }
 
 .tag:first-child {
-  border-color: rgba(240, 193, 75, 0.28);
+  border-color: rgba(215, 25, 32, 0.35);
   background: var(--accent-soft);
   color: var(--accent-bright);
 }
@@ -565,7 +602,7 @@ select:focus {
   content: "";
   width: 4px;
   height: 18px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: linear-gradient(180deg, var(--accent-bright), var(--accent-dark));
 }
 
@@ -662,12 +699,12 @@ select:focus {
 
 .fusion-card:hover {
   border-color: var(--line-strong);
-  transform: translateY(-1px);
+  transform: translateX(2px);
 }
 
 .fusion-card.special {
-  border-color: rgba(255, 143, 143, 0.32);
-  background: linear-gradient(180deg, rgba(255, 143, 143, 0.08), rgba(255, 143, 143, 0.02));
+  border-color: rgba(215, 25, 32, 0.4);
+  background: linear-gradient(180deg, rgba(215, 25, 32, 0.1), rgba(215, 25, 32, 0.03));
 }
 
 .fusion-type {
@@ -678,9 +715,9 @@ select:focus {
   display: inline-flex;
   align-items: center;
   padding: 6px 12px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: var(--accent-soft);
-  border: 1px solid rgba(240, 193, 75, 0.2);
+  border: 1px solid rgba(215, 25, 32, 0.25);
   color: var(--accent-bright);
   font-size: 12px;
   font-weight: 800;
@@ -688,8 +725,8 @@ select:focus {
 }
 
 .fusion-card.special .fusion-badge {
-  background: rgba(255, 143, 143, 0.12);
-  border-color: rgba(255, 143, 143, 0.24);
+  background: rgba(215, 25, 32, 0.18);
+  border-color: rgba(215, 25, 32, 0.35);
   color: var(--danger);
 }
 
@@ -711,7 +748,7 @@ select:focus {
   place-items: center;
   width: 24px;
   height: 24px;
-  border-radius: 999px;
+  border-radius: var(--radius-sm);
   background: var(--accent-soft);
   color: var(--accent-bright);
   font-size: 14px;
@@ -725,18 +762,18 @@ select:focus {
   align-items: center;
   min-width: 156px;
   padding: 9px 11px;
-  border: 1px solid rgba(127, 212, 168, 0.16);
+  border: 1px solid rgba(74, 158, 255, 0.2);
   border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, rgba(127, 212, 168, 0.08), rgba(127, 212, 168, 0.03));
+  background: linear-gradient(135deg, rgba(74, 158, 255, 0.08), rgba(74, 158, 255, 0.03));
 }
 
 .material-thumb {
   width: 46px;
   height: 46px;
-  border-radius: 11px;
+  border-radius: var(--radius-sm);
   object-fit: cover;
   background: var(--bg-elevated);
-  border: 1px solid rgba(127, 212, 168, 0.18);
+  border: 1px solid rgba(74, 158, 255, 0.22);
 }
 
 .material-thumb.placeholder {
@@ -785,8 +822,8 @@ select:focus {
 
 .persona-list::-webkit-scrollbar-thumb,
 .fusion-list::-webkit-scrollbar-thumb {
-  border-radius: 999px;
-  background: rgba(240, 193, 75, 0.22);
+  border-radius: var(--radius-sm);
+  background: rgba(215, 25, 32, 0.35);
 }
 
 .persona-list::-webkit-scrollbar-track,
@@ -846,4 +883,29 @@ select:focus {
   .persona-title h2 {
     font-size: 32px;
   }
+
+  .header-decoration {
+    display: none;
+  }
+}
+
+.header-decoration {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  opacity: 0.6;
+}
+
+.deco-line {
+  width: 60px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.deco-diamond {
+  width: 10px;
+  height: 10px;
+  background: var(--accent);
+  transform: rotate(45deg);
+  box-shadow: 0 0 12px var(--accent-glow);
 }
